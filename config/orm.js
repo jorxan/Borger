@@ -1,4 +1,4 @@
-const connection = require('./connection.js');
+const connection = require('./connection.js.js');
 
 const orm = {
 
@@ -18,7 +18,7 @@ const orm = {
             cb(result);
         });
     },
-    updateOne: function(){
+    updateOne: function(tablename,col2,col2value,col1,col1value,cb){
         const update = "UPDATE ?? SET ?? = ? WHERE ??=?";
         connection.query(updates, {tablename, col2, col2value, col1, col1value}, function(err, result){
             if (err) {throw err};
